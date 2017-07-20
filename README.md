@@ -22,7 +22,7 @@ Web application for storing films info. Functions: add, delete film, search by n
 3. Also using separate classes in classes/
 4. Routing to index.php through .htaccess
 5. Routing structure: localhost/movie_storage/**controller/method/id1/id2**
-6. JS/AJAX used to delete movie from DB (Homa page)
+6. JS/AJAX used to delete movie from DB (Home page)
 
 #### Pages
 0. Sidebar
