@@ -28,7 +28,6 @@ Web application for storing films info. Functions: add, delete film, search by n
    * Find    - redirect to Home page : localhost/movie_storage/home/index
    * Add     - redirect to Add movie page : localhost/movie_storage/movie/add
    * Upload  - redirect to Upload movies form file page : localhost/movie_storage/movie/upload
-
 1. Home page
    * Display all films in alphabetical order
    * You can filter films by film name **OR/AND** actor name through filter form and button **'Filter'**
