@@ -1,7 +1,7 @@
 # movie_storage
 Web application for storing films info. Functions: add, delete film, search by name or actor, show info, upload films info from file.
 
-#### Installation of application
+### Installation of application
 
 1. Clone this repository on your localhost in folder 'movie_storage'
 2. Configure files
@@ -14,16 +14,16 @@ Web application for storing films info. Functions: add, delete film, search by n
 3. Run localhost/movie_storage/home/install to install DB
 4. Installation is finished
 
-#### Architecture of application
+### Architecture of application
 
-##### General
+#### General
 1. OOP style
 2. MVC pattern implemented
 3. Also using separate classes in classes/
 4. Routing to index.php through .htaccess
 5. Routing structure: localhost/movie_storage/**controller/method/id1/id2**
 
-##### Pages
+#### Pages
 0. Sidebar
    * Find    - redirect to Home page : localhost/movie_storage/home/index
    * Add     - redirect to Add movie page : localhost/movie_storage/movie/add
@@ -43,7 +43,7 @@ Web application for storing films info. Functions: add, delete film, search by n
    * Error if invalid file
    * Warnings if some films was not added (already exists in DB): shows number of films added, errors and total films.
 
-##### Classes
+#### Classes
 1. Bootstrap
    * Index.php create Bootstrap object (with controller and action as properties)
    * Bootstrap object creates controller and executes action
