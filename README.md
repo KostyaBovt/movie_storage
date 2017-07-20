@@ -3,7 +3,7 @@ Web application for storing films info. Functions: add, delete film, search by n
 
 ### Installation of application
 
-1. Clone this repository on your localhost in folder 'movie_storage'
+1. Clone this repository to your localhost in folder 'movie_storage'
 2. Configure files
     * config/database.php
       * configure DB_USER and DB_PASSWORD
@@ -51,7 +51,7 @@ Web application for storing films info. Functions: add, delete film, search by n
    * Parent class for all controllers in application
 3. Model
    * Parent class for all models in application
-   * Creates and keeps PDO in properties, conect to DB on construct, keeps last query executed results in properties.
+   * Creates and keeps PDO in properties, connect to DB on construct, keeps last query executed results in properties.
    * Has basic methods to manipulate DB
 4. Home_controller
    * Displays Home page content (home/index and home/filter)
@@ -69,7 +69,7 @@ Web application for storing films info. Functions: add, delete film, search by n
 8. Separate classes
    * Session: uses to put, get, delete data from SESSION variable
    * Message: uses to put, get(and delete) messages from SESSION variable
-   * File: uses to maipulate file content (validate)
+   * File: uses to manipulate file content (validate)
    * Validator: uses to validate array to meet requirements - used in form validation
 
 
