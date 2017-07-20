@@ -22,6 +22,7 @@ Web application for storing films info. Functions: add, delete film, search by n
 3. Also using separate classes in classes/
 4. Routing to index.php through .htaccess
 5. Routing structure: localhost/movie_storage/**controller/method/id1/id2**
+6. JS/AJAX used to delete movie from DB (Homa page)
 
 #### Pages
 0. Sidebar
@@ -29,16 +30,16 @@ Web application for storing films info. Functions: add, delete film, search by n
    * Add     - redirect to Add movie page : localhost/movie_storage/movie/add
    * Upload  - redirect to Upload movies form file page : localhost/movie_storage/movie/upload
 1. Home page
-   * Display all films in alphabetical order
+   * Displays all films in alphabetical order
    * You can filter films by film name **OR/AND** actor name through filter form and button **'Filter'**
    * You can view information about film through button **'Information'**
    * You can delete film through button **'Delete'**
 2. Add movie
-   * Form to add movie to DB manually
+   * Form for adding movie to DB manually
    * All fields required
-   * Show error if invalid fields values filled or film already exists 
+   * Shows error if invalid fields values filled or film already exists 
 3. Upload movie
-   * Upload movies to DB from strictly formatted .txt file
+   * Uploads movies to DB from strictly formatted .txt file
    * Error if invalid file
    * Warnings if some films was not added (already exists in DB): shows number of films added, errors and total films.
 
@@ -50,15 +51,15 @@ Web application for storing films info. Functions: add, delete film, search by n
    * Parent class for all controllers in application
 3. Model
    * Parent class for all models in application
-   * Creates and keeps PDO in properies, conect to DB on construct, keeps last query executed results in properties.
-   * Have basic methods to manipiulate DB
+   * Creates and keeps PDO in properties, conect to DB on construct, keeps last query executed results in properties.
+   * Has basic methods to manipulate DB
 4. Home_controller
-   * Display Home page content (home/index and home/filter)
+   * Displays Home page content (home/index and home/filter)
    * Uses to install DB (home/install)
 5. Movie_controller
-   * Display and process  Movie Information page (movie/index)
-   * Display and process  Add movie page (movie/add)
-   * Display and process  Upload movie page (movie/upload)
+   * Displays and process  Movie Information page (movie/index)
+   * Displays and process  Add movie page (movie/add)
+   * Displays and process  Upload movie page (movie/upload)
    * Process Delete movie (movie/delete)
 6. Movie_list_model
    * Return movies data from DB to be displayed through Home_controller
