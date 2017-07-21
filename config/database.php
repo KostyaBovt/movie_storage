@@ -7,5 +7,4 @@
 	define('DB_PASSWORD', 'dobro27a'); //to configure
 
 	define('ROOT_PATH', '/'); //to configure if needs
-	// define('ROOT_URL', 'http://localhost' . ROOT_PATH);
 ?>
