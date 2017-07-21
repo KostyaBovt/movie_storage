@@ -1,7 +1,17 @@
 # movie_storage
 Web application for storing films info. Functions: add, delete film, search by name or actor, show info, upload films info from file.
 
-### Installation of application
+### Installation of application on build-in PHP server
+
+1. ```git clone https://github.com/KostyaBovt/movie_storage.git```
+2. ```cd movie_storage```
+3. ```php -S localhost:8000```
+4. configure DB_USER, DB_PASSWORD in config/database.php 
+4. open in browser http://localhost:8000/home/install to install db
+
+
+
+### Installation of application on apache server
 
 1. Clone this repository to your localhost in folder 'movie_storage'
 2. Configure files
