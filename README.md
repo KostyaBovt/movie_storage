@@ -7,7 +7,8 @@ Web application for storing films info. Functions: add, delete film, search by n
 2. ```cd movie_storage```
 3. ```php -S localhost:8000```
 4. configure DB_USER, DB_PASSWORD in config/database.php 
-4. open in browser http://localhost:8000/home/install to install db
+5. open in browser http://localhost:8000/home/install to install db
+6. installation is finished
 
 
 
