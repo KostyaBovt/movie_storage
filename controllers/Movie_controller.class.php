@@ -3,8 +3,8 @@
 		
 		public function Index() {
 			$movie_model = new Movie_model();
-			if (!empty($this->_request['id1'])) {
-				$view_data = $movie_model->getMovieInfo($this->_request['id1']);
+			if (!empty($this->_params[0])) {
+				$view_data = $movie_model->getMovieInfo($this->_params[0]);
 				$this->displayView(NULL, $view_data, 'views/movie_info.php');
 			}
 		}

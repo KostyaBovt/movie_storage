@@ -1,11 +1,11 @@
 <?php
 	class Controller {
-		protected $_request;
+		protected $_params;
 		protected $_action;	
 		
-		public function __construct($action, $request) {
+		public function __construct($action, $params) {
 			$this->_action = $action;
-			$this->_request = $request;
+			$this->_params = $params;
 		}
 
 		public function executeAction() {

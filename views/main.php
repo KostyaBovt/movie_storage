@@ -1,10 +1,12 @@
 <?php 
-	$controller = isset($_GET['controller']) ? $_GET['controller'] : 'home';
-	$action = isset($_GET['action'])? $_GET['action'] : 'index';
+	$bootstrap = new Bootstrap();
+	$controller = $bootstrap->getControllerName();
+	$action = $bootstrap->getActionName();
+
 	$active_pages = array(
-		'find' => ($controller == 'home') ? TRUE : FALSE, 
-		'add' => ($controller == 'movie' && $action == 'add') ? TRUE : FALSE, 
-		'upload' => ($controller == 'movie' && $action == 'upload') ? TRUE : FALSE 
+		'find' => ($controller == 'Home_controller') ? TRUE : FALSE, 
+		'add' => ($controller == 'Movie_controller' && $action == 'add') ? TRUE : FALSE, 
+		'upload' => ($controller == 'Movie_controller' && $action == 'upload') ? TRUE : FALSE 
 	);
 ?>
 

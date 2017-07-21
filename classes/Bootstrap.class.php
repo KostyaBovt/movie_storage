@@ -1,8 +1,25 @@
 <?php
 	class Bootstrap {
-		private $_request;
 		private $_action;
 		private $_controller;
+		private $_params;
+
+		private static function getRouteIndexes() {
+			$root_path = explode('/', ROOT_PATH);
+
+			$counter = 0;
+			foreach ($root_path as $path_elem) {
+				if ($path_elem != '') {
+					$counter++;
+				}
+			}
+			$indexes_array = array(
+				'controller' => $counter + 1,
+				'action' => $counter + 2,
+				'params' => $counter + 3
+			);
+			return $indexes_array;
+		} 
 
 		public function __toString() {
 			return	'request: ' . print_r($this->_request) . '<br/>' .
@@ -10,18 +27,31 @@
 					'controller: ' . $this->_controller . '<br/>';
 		}
 
-		public function __construct($request) {
-			$this->_request = $request;
-			if (!isset($this->_request['controller']) || $this->_request['controller'] == '') {
-				$this->_controller = 'Home_controller';
-			} else {
-				$this->_controller = ucfirst($request['controller'] . '_controller');
+		public function __construct() {
+			$this->_controller = 'Home_controller';
+			$this->_action = 'index';
+			$this->_params = array();
+
+
+			$route = explode('/', $_SERVER['REQUEST_URI']);
+			$indexes = self::getRouteIndexes();
+
+			if (!empty($route[$indexes['controller']])) {
+				$this->_controller = ucfirst($route[$indexes['controller']]) . '_controller';
 			}
-			if (!isset($this->_request['action']) || $this->_request['action'] == '') {
-				$this->_action = 'index';
-			} else {
-				$this->_action = $request['action'];
+
+			if (!empty($route[$indexes['action']])) {
+				$this->_action = $route[$indexes['action']];
 			}
+
+			$i = $indexes['params'];
+			while (!empty($route[$i])) {
+				$this->_params[] = $route[$i];
+				$i++;
+			}
+
+			// var_dump($this->_params);
+
 		}
 
 		public function createController() {
@@ -29,7 +59,7 @@
 				$parents = class_parents($this->_controller);
 				if (in_array("Controller", $parents)) {
 						if (method_exists($this->_controller, $this->_action)) {
-							return new $this->_controller($this->_action, $this->_request);
+							return new $this->_controller($this->_action, $this->_params);
 						} else {
 							echo '<h1>Method does not exist<h1>';
 							//echo 'controller: ' . $this->controller . ' action : ' . $this->action;
@@ -42,6 +72,14 @@
 				echo '<h1>Controller does not exist</h1>';
 				return;
 			}
+		}
+
+		public function getControllerName() {
+			return $this->_controller;
+		}
+
+		public function getActionName() {
+			return $this->_action;
 		}
 
 	}

@@ -6,6 +6,6 @@
 	define('DB_USER', 'root'); //to configure
 	define('DB_PASSWORD', 'dobro27a'); //to configure
 
-	define('ROOT_PATH', '/movie_storage/'); //to configure if needs
-	define('ROOT_URL', 'http://localhost' . ROOT_PATH);
+	define('ROOT_PATH', '/'); //to configure if needs
+	// define('ROOT_URL', 'http://localhost' . ROOT_PATH);
 ?>

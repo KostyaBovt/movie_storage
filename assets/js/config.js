@@ -1,1 +1,1 @@
-var rootURL = 'http://localhost/movie_storage/';
+var rootURL = 'http://localhost:8000/';
