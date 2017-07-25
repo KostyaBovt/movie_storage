@@ -14,12 +14,12 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+-- !40101 SET NAMES utf8mb4 ;
 
 --
--- База данных: `movie_storage`
 --
-CREATE DATABASE IF NOT EXISTS `movie_storage` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+-- База данных: `movie_storage`
+CREATE DATABASE IF NOT EXISTS `movie_storage` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `movie_storage`;
 
 -- --------------------------------------------------------
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `actors` (
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `formats` (
   `format` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `format` (`format`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Дамп данных таблицы `formats`
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `movies` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`),
   KEY `format_id` (`format_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=290 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=290 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `movies_actors` (
   PRIMARY KEY (`id`),
   KEY `movie_id` (`movie_id`),
   KEY `actor_id` (`actor_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1299 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1299 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

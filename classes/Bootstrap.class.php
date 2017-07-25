@@ -3,6 +3,7 @@
 		private $_action;
 		private $_controller;
 		private $_params;
+		private $_params_get;
 
 		private static function getRouteIndexes() {
 			$root_path = explode('/', ROOT_PATH);
@@ -31,9 +32,15 @@
 			$this->_controller = 'Home_controller';
 			$this->_action = 'index';
 			$this->_params = array();
+			$this->_params_get = array();
 
+			$parsed_uri = parse_url($_SERVER['REQUEST_URI']);
 
-			$route = explode('/', $_SERVER['REQUEST_URI']);
+			if (isset($parsed_uri['query'])) {
+				parse_str($parsed_uri['query'], $this->_params_get);
+			}
+
+			$route = explode('/', $parsed_uri['path']);
 			$indexes = self::getRouteIndexes();
 
 			if (!empty($route[$indexes['controller']])) {
@@ -59,7 +66,7 @@
 				$parents = class_parents($this->_controller);
 				if (in_array("Controller", $parents)) {
 						if (method_exists($this->_controller, $this->_action)) {
-							return new $this->_controller($this->_action, $this->_params);
+							return new $this->_controller($this->_action, $this->_params, $this->_params_get);
 						} else {
 							echo '<h1>Method does not exist<h1>';
 							//echo 'controller: ' . $this->controller . ' action : ' . $this->action;

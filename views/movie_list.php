@@ -1,5 +1,5 @@
 <h4><small>FILTER</small></h4>
-<form class="form-inline" role="form" method="POST" action="<?php echo ROOT_PATH . 'home/filter'?>">
+<form class="form-inline" role="form" method="GET" action="<?php echo ROOT_PATH . 'home/filter'?>">
   <div class="form-group">
     <label for="movie_name">Movie name</label>
     <input name="movie_name" type="text" class="form-control" id="movie_name" placeholder="Enter movie name...">

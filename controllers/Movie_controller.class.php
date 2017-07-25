@@ -86,7 +86,7 @@
 				$errors_count = 0;
 				$errors = array();
 				foreach ($movies as $movie) {
-					if (!$movie_model->addMovie($movie)) {
+					if (!$movie_model->addMovie(filter_var_array($movie, FILTER_SANITIZE_STRING))) {
 						$errors_count++;
 						$errors[] = $movie;
 					}

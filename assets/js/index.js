@@ -20,7 +20,8 @@ function addDelButtons() {
 					}
 					else {
 						// alert(xhr.responseText);
-						elem.parentElement.parentElement.remove();					
+						elem.parentElement.parentElement.remove();
+						location.reload();					
 					}		
 				};
 			};
