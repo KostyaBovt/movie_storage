@@ -9,7 +9,7 @@
 		public function Filter() {
 			$movie_list_model = new Movie_list_model();
 			$post  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-			$view_data = $movie_list_model->getMovieListFiltered($this->_params_get);
+			$view_data = $movie_list_model->getMovieListFiltered(filter_var_array($this->_params_get, FILTER_SANITIZE_STRING));
 			$this->displayView(NULL, $view_data, 'views/movie_list.php');
 		}
 

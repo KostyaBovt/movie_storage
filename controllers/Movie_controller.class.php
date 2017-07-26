@@ -25,7 +25,7 @@
 		}
 
 		public function Add() {
-			$post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+			$post = $_POST;//filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 			
 			if (isset($post['submit'])) {
 				$validator = new Validator();
@@ -86,7 +86,7 @@
 				$errors_count = 0;
 				$errors = array();
 				foreach ($movies as $movie) {
-					if (!$movie_model->addMovie(filter_var_array($movie, FILTER_SANITIZE_STRING))) {
+					if (!$movie_model->addMovie($movie)) { //filter_var_array($movie, FILTER_SANITIZE_STRING))) {
 						$errors_count++;
 						$errors[] = $movie;
 					}

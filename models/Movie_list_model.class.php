@@ -15,11 +15,15 @@
 		}
 
 		public function getMovieListFiltered($filter_array) {
-			$params = array("%" . strtoupper(trim($filter_array['movie_name'])) . "%");
+			$movie_name = str_replace('%', '\\%', strtoupper(trim($filter_array['movie_name'])));
+			$movie_name = str_replace('_', '\\_', $movie_name);
+			$params = array("%" . $movie_name . "%");
 
 			if ($filter_array['actor_name']) {
-
-				$params[] = "%" . strtoupper($filter_array['actor_name']) . "%";
+				$actor_name = str_replace('%', '\\%', strtoupper(trim($filter_array['actor_name'])));
+				$actor_name = str_replace('_', '\\_', $actor_name);
+				
+				$params[] = "%" . $actor_name . "%";
 				$this->query(	'SELECT movies.*, movies.id as movie_id, formats.format
 								FROM movies 
 								INNER JOIN formats 
